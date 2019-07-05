@@ -33,9 +33,7 @@ namespace zutils
 					largest = right;
 				if (largest != index)
 				{
-					heap_arr[largest] ^= heap_arr[index];
-					heap_arr[index] ^= heap_arr[largest];
-					heap_arr[largest] ^= heap_arr[index];
+					std::swap(heap_arr[largest], heap_arr[index]);
 					heapify(largest); 
 				}
 			}
@@ -61,12 +59,20 @@ namespace zutils
 			{
 				for (auto i = max_index; i >= 1; i--)
 				{
-					heap_arr[0] ^= heap_arr[i];
-					heap_arr[i] ^= heap_arr[0];
-					heap_arr[0] ^= heap_arr[i];
+					std::swap(heap_arr[0], heap_arr[i]);
 					--max_index;
 					heapify(0);
 				}
+			}
+
+			/*
+			
+				将heap_arr转移给其他vector，该函数使用后，不应再对这个类对象进行操作。
+			
+			*/
+			void giveArray(std::vector<int>& arr)
+			{
+				arr = std::move(heap_arr);
 			}
 
 			inline std::size_t getLeftChild(const std::size_t& index) { return (index << 1) + 1; }
