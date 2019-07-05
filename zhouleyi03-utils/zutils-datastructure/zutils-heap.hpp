@@ -39,7 +39,7 @@ namespace zutils
 					heapify(largest); 
 				}
 			}
-			int addNode(const int& val)
+			void addNode(const int& val)
 			{
 				++max_index;
 				heap_arr.push_back(val);
@@ -51,6 +51,24 @@ namespace zutils
 				for (const auto& obj : heap_arr)
 					std::cout << obj << " ";
 			}
+
+			/*
+			
+				如果你在创建堆的时候用的是MAX_HEAP，那么堆排序将使用升序。
+			
+			*/
+			void heapSort()
+			{
+				for (auto i = max_index; i >= 1; i--)
+				{
+					heap_arr[0] ^= heap_arr[i];
+					heap_arr[i] ^= heap_arr[0];
+					heap_arr[0] ^= heap_arr[i];
+					--max_index;
+					heapify(0);
+				}
+			}
+
 			inline std::size_t getLeftChild(const std::size_t& index) { return (index << 1) + 1; }
 			inline std::size_t getRightChild(const std::size_t& index) { return (index << 1) + 2; }
 			inline std::size_t getParent(const std::size_t& index) { return (index-1) >> 1; }

@@ -6,9 +6,10 @@
 
 int main()
 {
-	std::vector<int> a{1,2,3,4,5};
+	std::vector<int> a{4,1,3,2,16,9,10,14,8,7};
 	zutils::heap::Heap h(MAX_HEAP);
 	h.buildHeap(a);
+	h.heapSort();
 	h.printHeap();
 	return 0;
 }
