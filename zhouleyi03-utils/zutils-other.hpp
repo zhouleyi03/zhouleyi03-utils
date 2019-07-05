@@ -39,7 +39,7 @@ namespace zutils
 		*/
 		std::string getLcsUniversal(const std::string& l, const std::string& r)
 		{
-
+			return " ";
 		}
 	}
 }

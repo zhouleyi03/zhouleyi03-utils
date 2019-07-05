@@ -1,8 +1,14 @@
 #include "zutils.h"
-#include <iostream>
 
-int main(int argc, char *argv[])
+#include <iostream>
+#include <string>
+#include <vector>
+
+int main()
 {
-	std::cout << zutils::password::vigenerePasswordEncrypt("Helloworld", "abc");
+	std::vector<int> a{1,2,3,4,5};
+	zutils::heap::Heap h(MAX_HEAP);
+	h.buildHeap(a);
+	h.printHeap();
 	return 0;
 }
