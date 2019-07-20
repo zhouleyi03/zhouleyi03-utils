@@ -1,12 +1,13 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <ctime>
 
 namespace zutils
 {
 	namespace other
 	{
-		/*  ID: 0x04
+		/*
 
 			-最后修改于 2019/7/1
 			说明：求出最长公共子序列。
@@ -31,7 +32,7 @@ namespace zutils
 			return result;
 		}
 
-		/*  ID: 0x05
+		/*
 
 			-最后修改于 2019/7/1
 			说明：求出最长公共子序列的常用算法。

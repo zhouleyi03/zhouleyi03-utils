@@ -6,7 +6,7 @@ namespace zutils
 {
 	namespace password
 	{
-		/*  ID: 0x06
+		/*
 
 			-最后修改于 2019/7/1
 			说明：对指定文本使用vigenere密码方式加密。
@@ -40,7 +40,7 @@ namespace zutils
 			return password_container;
 		}
 
-		/*  ID: 0x07
+		/*
 
 			-最后修改于 2019/7/1
 			说明：对指定文本使用vigenere密码方式解密。
