@@ -1,12 +1,11 @@
-#include "zutils.h"
-#include <iostream>
+#include "zutils-other.hpp"
 
 int main()
 {
-	std::string s_t("abababacaabababaca");
-	std::string s_p("ababaca");
-	std::size_t result = zutils::string::sunday(s_p, s_t);
-	std::cout << std::endl;
-	std::cout << result;
+	std::vector<int> x;
+	for (int i = 0; i < 101; i++)
+		x.push_back(i);
+	std::cout << "Expected result: 5050" << std::endl;
+	std::cout << "Actual result: "<<zutils::other::mt_accumulate(x);
 	return 0;
 }
